@@ -1,8 +1,8 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
+﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/AnimationTest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/playChest.cs">
     <Files>
-      <File FileName="Assets/AnimationTest.cs" Line="19" Column="1" />
+      <File FileName="Assets/playChest.cs" Line="2" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
