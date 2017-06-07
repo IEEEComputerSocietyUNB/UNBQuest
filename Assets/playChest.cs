@@ -14,9 +14,8 @@ public class playChest : MonoBehaviour {
 	void Update () {
 		Animator anim = GetComponent<Animator> ();
 		if (Input.GetMouseButtonDown (0)) {
-			Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-			RaycastHit hit;
-			if (Physics.Raycast(ray, out hit)){
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			if (Physics.Raycast(ray, 100)) {
 				if (null != anim) {
 					if (anim.GetBool ("chest_status")) {
 						anim.SetTrigger ("openchest");
