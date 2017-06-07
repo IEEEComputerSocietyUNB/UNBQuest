@@ -1,9 +1,9 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNBQuest", "Assembly-CSharp.csproj", "{B6F81373-5C5F-510A-D0EA-62518099DE54}"
+# Visual Studio 2008
+
+Project("{9C22CF85-CD7C-A6A8-287F-249F7585A551}") = "UNBQuest", "Assembly-CSharp.csproj", "{B6F81373-5C5F-510A-D0EA-62518099DE54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNBQuest", "Assembly-CSharp-Editor.csproj", "{7A537CF2-2BD7-5BBD-756E-82404AF09704}"
+Project("{9C22CF85-CD7C-A6A8-287F-249F7585A551}") = "UNBQuest", "Assembly-CSharp-Editor.csproj", "{7A537CF2-2BD7-5BBD-756E-82404AF09704}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
