@@ -12,25 +12,26 @@ public class playChest : MonoBehaviour {
 	}
 
 	void Update () {
-
-	}
-
-	void OnMouseDown(){
 		Animator anim = GetComponent<Animator> ();
-		if (null != anim) {
-			if (anim.GetBool ("chest_status")) {
-				anim.SetTrigger ("openchest");
-				card_image.SetActive (true);
-				anim.SetTrigger ("showimage");
-				anim.SetBool ("chest_status", false);
-			} else {
-				anim.SetTrigger ("closechest");
-				anim.SetBool ("chest_status", true);
-				card_image.SetActive (false);
+		if (Input.GetMouseButtonDown (0)) {
+			Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+			if (Physics.Raycast(ray, out hit)){
+				if (null != anim) {
+					if (anim.GetBool ("chest_status")) {
+						anim.SetTrigger ("openchest");
+						card_image.SetActive (true);
+						anim.SetTrigger ("showimage");
+						anim.SetBool ("chest_status", false);
+					} else {
+						anim.SetTrigger ("closechest");
+						anim.SetBool ("chest_status", true);
+						card_image.SetActive (false);
+					}
+				}
 			}
 		}
 	}
-
 }
 
 	
