@@ -108,6 +108,11 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!20 &5601257 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 2000000, guid: bf30d577eead1ef40bcf2b404289daf4,
+    type: 2}
+  m_PrefabInternal: {fileID: 889785610}
 --- !u!1 &191702508
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,9 +142,11 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: c90ca19f3f7d14827a9c7b7bc3811228, type: 2}
   m_Animations:
+  - {fileID: 7400000, guid: e9ccb5b56cb894d0cb863a59fd5e6877, type: 2}
   - {fileID: 7400000, guid: c90ca19f3f7d14827a9c7b7bc3811228, type: 2}
+  - {fileID: 7400000, guid: 1ca57eeae4fe3413386a6b502c2aee7e, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!114 &191702510
@@ -187,9 +194,9 @@ Canvas:
   m_GameObject: {fileID: 191702508}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 5601257}
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -400,6 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card_image: {fileID: 191702508}
   image: {fileID: 1388315870}
+  anim: {fileID: 0}
 --- !u!65 &623750103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -500,7 +508,7 @@ Prefab:
     - target: {fileID: 9500000, guid: ea6da4a0ebadb704691a6fa2d03f817b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b076994425e7040d892a0fbbe7dd7c71, type: 2}
+      objectReference: {fileID: 9100000, guid: 81ac2c36964c64ac48da4b256a06278b, type: 2}
     - target: {fileID: 400002, guid: ea6da4a0ebadb704691a6fa2d03f817b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
@@ -554,7 +562,6 @@ GameObject:
   - component: {fileID: 1388315868}
   - component: {fileID: 1388315871}
   - component: {fileID: 1388315870}
-  - component: {fileID: 1388315869}
   m_Layer: 5
   m_Name: card
   m_TagString: Untagged
@@ -574,24 +581,12 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 191702513}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.0925751}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1388315869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1388315867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a714ade8cc3e410c8d07d0eadc8e430, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  card_object: {fileID: 191702508}
 --- !u!114 &1388315870
 MonoBehaviour:
   m_ObjectHideFlags: 0
