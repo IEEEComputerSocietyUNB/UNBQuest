@@ -125,30 +125,31 @@ GameObject:
   - component: {fileID: 191702511}
   - component: {fileID: 191702510}
   - component: {fileID: 191702509}
+  - component: {fileID: 191702514}
   m_Layer: 5
   m_Name: canvas_card
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!111 &191702509
-Animation:
+--- !u!95 &191702509
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 191702508}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: c90ca19f3f7d14827a9c7b7bc3811228, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: e9ccb5b56cb894d0cb863a59fd5e6877, type: 2}
-  - {fileID: 7400000, guid: c90ca19f3f7d14827a9c7b7bc3811228, type: 2}
-  - {fileID: 7400000, guid: 1ca57eeae4fe3413386a6b502c2aee7e, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 51c910e11a9584aae9eb2a853eb19af0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &191702510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +226,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &191702514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 191702508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce270de48de848feb9e4105ab2d4aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 191702509}
+  treasure_anim: {fileID: 623750099}
+  treasure: {fileID: 100002, guid: ea6da4a0ebadb704691a6fa2d03f817b, type: 3}
 --- !u!1001 &279520226
 Prefab:
   m_ObjectHideFlags: 0
@@ -338,7 +353,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 10
-  m_Range: 60
+  m_Range: 80
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -347,8 +362,8 @@ Light:
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NormalBias: 0.41
+    m_NearPlane: 0.99
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -370,7 +385,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 285763127}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1720962548}
@@ -389,11 +404,17 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: ea6da4a0ebadb704691a6fa2d03f817b, type: 3}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: ea6da4a0ebadb704691a6fa2d03f817b, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!95 &623750099 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: ea6da4a0ebadb704691a6fa2d03f817b,
+    type: 3}
+  m_PrefabInternal: {fileID: 1214226339}
 --- !u!114 &623750102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,9 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e9df8c68a6341f2b5c71068c8dc677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card_image: {fileID: 191702508}
-  image: {fileID: 1388315870}
-  anim: {fileID: 0}
+  anim: {fileID: 623750099}
 --- !u!65 &623750103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -584,8 +603,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 150}
+  m_AnchoredPosition: {x: 0, y: -10}
+  m_SizeDelta: {x: 200, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1388315870
 MonoBehaviour:
@@ -608,7 +627,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: e2d5d6973b46743d9b23552ba2f277ef, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
