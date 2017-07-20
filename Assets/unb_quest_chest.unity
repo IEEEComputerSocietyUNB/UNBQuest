@@ -125,7 +125,6 @@ GameObject:
   - component: {fileID: 191702511}
   - component: {fileID: 191702510}
   - component: {fileID: 191702509}
-  - component: {fileID: 191702514}
   m_Layer: 5
   m_Name: canvas_card
   m_TagString: Untagged
@@ -226,20 +225,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &191702514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 191702508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ce270de48de848feb9e4105ab2d4aa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 191702509}
-  treasure_anim: {fileID: 623750099}
-  treasure: {fileID: 100002, guid: ea6da4a0ebadb704691a6fa2d03f817b, type: 3}
 --- !u!1001 &279520226
 Prefab:
   m_ObjectHideFlags: 0
@@ -427,6 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 623750099}
+  card_animator: {fileID: 191702509}
 --- !u!65 &623750103
 BoxCollider:
   m_ObjectHideFlags: 0

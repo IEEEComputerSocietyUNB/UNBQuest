@@ -3,23 +3,28 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class playChest : MonoBehaviour {	
-	public Animator anim;
+	public Animator anim, card_animator;
 
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray, 100)) {
 				if (null != anim) {
-					if (anim.GetBool ("chest_status")) {
+					if (!anim.GetBool ("chest_status")) {
 						anim.SetTrigger ("open");
-						anim.SetBool ("chest_status", false);
+						card_animator.SetTrigger ("show");
+						anim.SetBool ("chest_status", true);
 					} else {
 						anim.SetTrigger ("close");
-						anim.SetBool ("chest_status", true);
+						card_animator.SetTrigger ("hide");
+						anim.SetBool ("chest_status", false);
 					}
 				}
+
 			}
 		}
+
+
 	}
 }
 
