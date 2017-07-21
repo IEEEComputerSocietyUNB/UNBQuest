@@ -16,7 +16,7 @@ public class PlayChest : MonoBehaviour {
 		originPositions =  imageTargetScript.GetTreasurePosition ();
 		Debug.Log (x + " " + y + " " + z);
 		Debug.Log (originPositions[0] + " " + originPositions[1] + " " + originPositions[2]);
-		card.transform.position = new Vector3 (x, 0 , 0);
+		card.transform.position = new Vector3 (50, 100 , 0);
 //		card.transform.position = new Vector3 (originPositions[0], originPositions[1] , originPositions[2]);
 		Debug.Log ("card: " + card.transform.position.x + " " + card.transform.position.y + " " + card.transform.position.z);
 
