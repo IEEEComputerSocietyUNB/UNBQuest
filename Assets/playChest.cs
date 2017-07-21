@@ -1,30 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
+using System.Collections.Generic;
 
-public class playChest : MonoBehaviour {	
-	public Animator anim, card_animator;
+public class PlayChest : MonoBehaviour {	
+	public Animator anim, cardAnimator;
+	private TreasurePos imageTargetScript;
+	public GameObject card;
+
+	void Start(){
+		imageTargetScript = GameObject.Find("ImageTarget").GetComponent<TreasurePos>();
+	}
+
+	void SetOrigin(float x, float y, float z) {
+		List<float> originPositions = new List<float> ();
+		originPositions =  imageTargetScript.GetTreasurePosition ();
+		Debug.Log (x + " " + y + " " + z);
+		Debug.Log (originPositions[0] + " " + originPositions[1] + " " + originPositions[2]);
+		card.transform.position = new Vector3 (x, 0 , 0);
+//		card.transform.position = new Vector3 (originPositions[0], originPositions[1] , originPositions[2]);
+		Debug.Log ("card: " + card.transform.position.x + " " + card.transform.position.y + " " + card.transform.position.z);
+
+	}
 
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray, 100)) {
-				if (null != anim) {
+				if (anim != null) {
 					if (!anim.GetBool ("chest_status")) {
+						SetOrigin (ray.direction.x, ray.direction.y, ray.direction.z);
 						anim.SetTrigger ("open");
-						card_animator.SetTrigger ("show");
+						cardAnimator.SetTrigger ("show");
 						anim.SetBool ("chest_status", true);
 					} else {
 						anim.SetTrigger ("close");
-						card_animator.SetTrigger ("hide");
+						cardAnimator.SetTrigger ("hide");
 						anim.SetBool ("chest_status", false);
 					}
 				}
-
 			}
 		}
-
-
 	}
 }
 
