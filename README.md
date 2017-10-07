@@ -1,6 +1,8 @@
 # UNB Quest
 
-Projeto usando realidade aumentada da Computer Society  UnB.
+Projeto usando realidade aumentada da Computer Society  UnB. 
+
+This project is still in alpha development, that's why we haven't written an extensive documentation about this yet. But if you would like to follow this project, there's an apk on the root of the master branch.
 
 ## Equipe responsável
 
